@@ -1,0 +1,12 @@
+# This is supplyChain test
+
+language: node_js
+node_js:
+  - "10"
+
+before_script:
+  - npm install -g truffle
+
+script:
+  - git checkout ci_student test/supply_chain.test.js
+  - truffle test
