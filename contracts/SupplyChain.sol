@@ -3,7 +3,7 @@
 pragma solidity >=0.5.16 <0.9.0;
 
 contract SupplyChain {
-  //pragma solidity ^0.8;
+  
   // <owner>
   address public owner;
   
@@ -118,8 +118,8 @@ contract SupplyChain {
       sku: skuCount, 
       price: _price, 
       state: State.ForSale,
-      seller: msg.sender, 
-      buyer: address(0)
+      seller: payable(msg.sender), 
+      buyer: payable(address(0))
     });
 
     skuCount += 1;
